@@ -13,6 +13,6 @@
 
 [[redirects]]
   from = "/index.html"
-  to = "/edit"
+  to = "/diagrams"
   status = 301
   force = true

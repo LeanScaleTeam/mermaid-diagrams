@@ -4,8 +4,14 @@
   import { onMount } from 'svelte';
 
   onMount(async () => {
-    await goto(buildRedirectUrl(window.location), {
-      replaceState: true
-    });
+    // If there's a hash (legacy link), redirect to editor with the diagram
+    if (window.location.hash) {
+      await goto(buildRedirectUrl(window.location), {
+        replaceState: true
+      });
+    } else {
+      // Otherwise show the diagram index
+      await goto('/diagrams', { replaceState: true });
+    }
   });
 </script>
